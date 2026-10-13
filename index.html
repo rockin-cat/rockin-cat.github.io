@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eines digitals Rockin</title>
+<meta name="description" content="Totes les eines digitals de Rockin per aprendre música i preparar les classes: guitarra, baix, bateria, teclat, veu, llenguatge musical, cartes i diagrames.">
+<link rel="icon" type="image/png" href="marca/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Ubuntu:wght@400;500;700&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+<style>
+/* Portada: barra groga Rockin, presentació breu i eines agrupades per ús (aprendre a tocar / preparar i crear) */
+:root{
+  --paper:#F2F2EF; --surface:#FFFFFF; --ink:#1B1B19; --muted:#63625C; --line:#DAD9D3;
+  --yellow:#FFC012; --on-yellow:#1B1B19;
+  --c-gtr:#E8A800; --c-bass:#1FA597; --c-drum:#E2476F; --c-keys:#2E95D3; --c-lang:#8A63D2; --c-voice:#E07A2E; --c-tools:#4F5B66;
+  --f-ui:'Ubuntu','Trebuchet MS',system-ui,sans-serif; --f-text:'Lora',Georgia,serif; --f-mono:'Ubuntu Mono',ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#131312;--surface:#1C1C1A;--ink:#ECEBE6;--muted:#A2A098;--line:#33322E;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#131312;--surface:#1C1C1A;--ink:#ECEBE6;--muted:#A2A098;--line:#33322E;color-scheme:dark}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-ui);font-size:16px;line-height:1.5}
+a{color:inherit}
+:focus-visible{outline:3px solid #2B57D1;outline-offset:2px}
+.bar{background:var(--yellow);color:var(--on-yellow)}
+.bar-in{max-width:1040px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.logo{height:1.6rem;width:auto;display:block;filter:brightness(0)}
+.bar .sub{font-family:var(--f-text);font-style:italic}
+main{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:36px 64px}
+.hero{display:grid;gap:10px;margin-bottom:40px;max-width:62ch}
+.kicker{font-family:var(--f-mono);font-size:.82rem;color:var(--muted);letter-spacing:.05em}
+h1{margin:0;font-size:clamp(2rem,5.4vw,3.2rem);line-height:1.05;letter-spacing:-.025em;text-wrap:balance}
+.lead{margin:0;font-family:var(--f-text);font-size:1.12rem;color:var(--muted)}
+section{margin-bottom:40px}
+h2{margin:0 0 4px;font-size:1.35rem;letter-spacing:-.01em}
+.sec-sub{margin:0 0 16px;font-family:var(--f-text);color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.tool{position:relative;display:grid;grid-template-columns:52px minmax(0,1fr);gap:4px 14px;align-content:start;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:16px;text-decoration:none;transition:border-color .15s,transform .15s}
+.tool:hover{border-color:var(--ink);transform:translateY(-2px)}
+.ic{grid-row:1/span 3;width:52px;height:52px;border-radius:12px;background:var(--c);color:#1B1B19;display:grid;place-items:center}
+.ic svg{width:30px;height:30px}
+.tool h3{margin:0;font-size:1.12rem;line-height:1.25}
+.tool p{margin:0;font-family:var(--f-text);font-size:.97rem;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tags span{font-family:var(--f-mono);font-size:.75rem;border:1px solid var(--line);border-radius:6px;padding:1px 7px;color:var(--muted)}
+.go{margin-top:10px;font-weight:700;font-size:.92rem}
+.go::after{content:" →"}
+.src{position:absolute;right:14px;top:14px;font-family:var(--f-mono);font-size:.72rem;color:var(--muted);text-decoration:none;z-index:2}
+.src:hover{text-decoration:underline}
+.stretch{position:absolute;inset:0;border-radius:14px;z-index:1}
+#noves[hidden]{display:none}
+footer{max-width:1040px;margin:0 auto;padding:0 16px 32px;color:var(--muted);font-size:.85rem;display:grid;gap:4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="bar"><div class="bar-in"><img class="logo" src="marca/rockin-wordmark.png" alt="ROCKIN" width="720" height="141"><span class="sub">Eines digitals</span></div></header>
+<main>
+  <div class="hero">
+    <span class="kicker">ROCKIN · [R]EVOLUCIONEM LA MÚSICA</span>
+    <h1>Eines digitals per aprendre música tocant en grup</h1>
+    <p class="lead">Bastides de suport a l'aprenentatge que complementen les cartes i els materials de Rockin. Funcionen amb el navegador, sense instal·lar res, i el que es practica aquí es porta després a l'instrument i a la banda.</p>
+  </div>
+  <section>
+    <h2>Aprendre a tocar</h2>
+    <p class="sec-sub">Per a l'alumnat: practicar cada instrument amb una banda que acompanya.</p>
+    <div class="grid" id="g-tocar"></div>
+  </section>
+  <section>
+    <h2>Preparar, crear i escoltar</h2>
+    <p class="sec-sub">Per preparar les classes, crear cançons i treballar l'escolta.</p>
+    <div class="grid" id="g-crear"></div>
+  </section>
+  <section id="noves" hidden>
+    <h2>Noves eines</h2>
+    <p class="sec-sub">Publicades fa poc a GitHub.</p>
+    <div class="grid" id="g-noves"></div>
+  </section>
+</main>
+<footer><span>Rockin.cat SCCL · Materials sota llicència Creative Commons BY-NC-SA 4.0.</span><span>Codi obert a <a href="https://github.com/rockin-cat">github.com/rockin-cat</a>.</span></footer>
+<script>
+const ICON={
+  gtr:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M28 36 52 12"/><path d="m48 8 8 8"/><path d="M27 25c-5-3-12-1-14 4-3 1-6 4-6 9 0 9 9 18 18 18 5 0 8-3 9-6 5-2 7-9 4-14-2-4-6-5-8-4"/><circle cx="23" cy="41" r="3.5"/></svg>',
+  drum:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="32" cy="34" rx="20" ry="7"/><path d="M12 34v12c0 4 9 7 20 7s20-3 20-7V34"/><path d="m14 8 18 22M50 8 32 30"/></svg>',
+  keys:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><rect x="6" y="14" width="52" height="36" rx="4"/><path d="M16 34v16M26 34v16M38 34v16M48 34v16"/><path d="M13 14h6v20h-6zM23 14h6v20h-6zM35 14h6v20h-6zM45 14h6v20h-6z" fill="currentColor"/></svg>',
+  lang:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 46V14l28-6v32"/><circle cx="16" cy="46" r="6"/><circle cx="44" cy="40" r="6"/></svg>',
+  voice:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="24" y="6" width="16" height="30" rx="8"/><path d="M14 30a18 18 0 0 0 36 0M32 48v10M22 58h20"/></svg>',
+  cards:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><rect x="8" y="12" width="30" height="42" rx="5" transform="rotate(-10 23 33)"/><rect x="26" y="10" width="30" height="42" rx="5"/><circle cx="36" cy="31" r="3.5" fill="currentColor"/><circle cx="46" cy="31" r="3.5" fill="currentColor"/></svg>',
+  diag:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><rect x="12" y="8" width="40" height="48" rx="4"/><path d="M22 8v48M32 8v48M42 8v48M12 20h40M12 32h40M12 44h40"/><circle cx="32" cy="26" r="4" fill="currentColor"/></svg>',
+  ear:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M20 26a12 12 0 0 1 24 0c0 9-9 11-9 20a6 6 0 0 1-12 0"/><path d="M26 27a6 6 0 0 1 12 0"/></svg>',
+  tool:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><rect x="10" y="10" width="44" height="44" rx="8"/><path d="M22 32h20M32 22v20"/></svg>'
+};
+/* Eines conegudes: repositori de rockin-cat, nom, descripció, etiquetes, color i icona */
+const TOOLS=[
+  {repo:'Llenguatge-musical',g:'tocar',nom:'Llenguatge musical',c:'--c-lang',i:'lang',tags:['Guitarra','Baix','Teclat','Bateria','Dictat'],d:'Cada tema comença amb una base que sona: veus al pal o al teclat com es toca, descobreixes els ingredients pas a pas i la toques amb la banda. També dictat rítmic amb les cartes.'},
+  {repo:'guitarra-baix',g:'tocar',nom:'Guitarra i baix',c:'--c-gtr',i:'gtr',tags:['Guitarra','Baix','10 nivells'],d:'Tutor d\'estudi amb els fulls de ruta i les cartes Rockin: escoltes la teva part, la banda continua sense tu i l\'animació et guia.'},
+  {repo:'teclat',g:'tocar',nom:'Entrenador d\'acompanyament',c:'--c-keys',i:'keys',tags:['Teclat','MIDI','Cartes'],d:'Toques els acords d\'una progressió amb el patró de la carta Rockin mentre sona la base, i cada nota es corregeix al moment.'},
+  {repo:'bateria',g:'tocar',nom:'Bateria',c:'--c-drum',i:'drum',tags:['Bateria','MIDI','Cartes'],d:'Aprens a tocar la bateria amb les cartes de patrons Rockin: primer escoltes, després toques amb la banda i veus a cada cop com ha anat.'},
+  {repo:'mirall-de-veu',g:'tocar',nom:'Mirall de veu',c:'--c-voice',i:'voice',tags:['Veu','Cant'],d:'Carregues una cançó, se separa la veu de la banda i la treballes frase a frase: l\'escoltes, la cantes sobre la base i veus quines notes has encertat.'},
+  {repo:'Cartes-rockin',g:'crear',nom:'Cartes Rockin',c:'--c-tools',i:'cards',tags:['Cartes','Creació'],d:'Les cartes Rockin en digital, per triar-les, combinar-les i crear estructures de cançó a la classe.'},
+  {repo:'Generador-diagrames',g:'crear',nom:'Generador de diagrames',c:'--c-tools',i:'diag',tags:['Guitarra','Teclat','Baix','Bateria'],d:'Diagrames d\'acords i de bateria i estructura de cançons, amb una biblioteca compartida per al professorat.'},
+  {repo:'escolta-i-compon',g:'crear',nom:'Escolta i compon',c:'--c-tools',i:'ear',tags:['Escolta','Vocabulari'],d:'Relacionar fragments de cançons amb descripcions i treballar el vocabulari musical. Té una vista per al professorat.'}
+];
+/* Repositoris que no han de sortir a la portada (duplicats o aquesta mateixa pàgina) */
+const HIDE=['rockin-cat.github.io','rockin','tallerdecreacio'];
+const ORG='rockin-cat';
+const url=r=>`https://${ORG}.github.io/${r}/`;
+const esc=s=>String(s).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[ch]);
+function card(t){return `<article class="tool" style="--c:var(${t.c})"><span class="ic">${ICON[t.i]||ICON.tool}</span><h3>${esc(t.nom)}</h3><p>${esc(t.d)}</p>${t.tags&&t.tags.length?`<div class="tags">${t.tags.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}<span class="go">Obre</span><a class="stretch" href="${url(t.repo)}" aria-label="Obre ${esc(t.nom)}"></a><a class="src" href="https://github.com/${ORG}/${t.repo}">codi</a></article>`}
+document.getElementById('g-tocar').innerHTML=TOOLS.filter(t=>t.g==='tocar').map(card).join('');
+document.getElementById('g-crear').innerHTML=TOOLS.filter(t=>t.g==='crear').map(card).join('');
+/* Eines noves: repositoris amb web publicada que encara no són a la llista */
+(async()=>{
+  try{
+    const r=await fetch(`https://api.github.com/orgs/${ORG}/repos?per_page=100&sort=pushed`);if(!r.ok)return;
+    const known=new Set([...TOOLS.map(t=>t.repo.toLowerCase()),...HIDE.map(h=>h.toLowerCase())]);
+    const extra=(await r.json()).filter(x=>x.has_pages&&!x.archived&&!known.has(x.name.toLowerCase()));
+    if(!extra.length)return;
+    document.getElementById('g-noves').innerHTML=extra.map(x=>card({repo:x.name,nom:x.name.replace(/[-_]/g,' ').replace(/^./,c=>c.toUpperCase()),d:x.description||'Eina nova de Rockin.',c:'--c-tools',i:'tool',tags:[]})).join('');
+    document.getElementById('noves').hidden=false;
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
