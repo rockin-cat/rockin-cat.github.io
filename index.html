@@ -114,7 +114,7 @@ const HIDE=['rockin-cat.github.io','rockin','Cartes-rockin','Llenguatge-musical'
 const ORG='rockin-cat';
 const url=r=>`https://${ORG}.github.io/${r}/`;
 const esc=s=>String(s).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[ch]);
-const SHOT=['Llenguatge-musical','guitarra-baix','teclat','bateria','mirall-de-veu','Cartes-rockin','Generador-diagrames','escolta-i-compon'];
+const SHOT=['Llenguatge-musical','guitarra-baix','teclat','bateria','rockin-sampler','mirall-de-veu','Cartes-rockin','Generador-diagrames','escolta-i-compon'];
 function card(t){const sh=t.shot||(SHOT.includes(t.repo)?t.repo:'');return `<article class="tool" style="--c:var(${t.c})">${sh?`<span class="shot"><img src="captures/${sh}.jpg" alt="Captura de ${esc(t.nom)}" loading="lazy" width="800" height="500"></span>`:''}<div class="head"><span class="ic">${ICON[t.i]||ICON.tool}</span><h3>${esc(t.nom)}</h3></div><p>${esc(t.d)}</p><div class="foot">${t.tags&&t.tags.length?`<div class="tags">${t.tags.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:'<span></span>'}<span class="go">Obre</span></div><a class="stretch" href="${url(t.repo)}" aria-label="Obre ${esc(t.nom)}"></a><a class="src" href="https://github.com/${ORG}/${t.repo}">codi</a></article>`}
 document.getElementById('g-tocar').innerHTML=TOOLS.filter(t=>t.g==='tocar').map(card).join('');
 document.getElementById('g-crear').innerHTML=TOOLS.filter(t=>t.g==='crear').map(card).join('');
