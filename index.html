@@ -37,17 +37,23 @@ section{margin-bottom:40px}
 h2{margin:0 0 4px;font-size:1.35rem;letter-spacing:-.01em}
 .sec-sub{margin:0 0 16px;font-family:var(--f-text);color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
-.tool{position:relative;display:grid;grid-template-columns:52px minmax(0,1fr);gap:4px 14px;align-content:start;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:16px;text-decoration:none;transition:border-color .15s,transform .15s}
+.tool{position:relative;display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:16px;text-decoration:none;transition:border-color .15s,transform .15s;min-width:0}
 .tool:hover{border-color:var(--ink);transform:translateY(-2px)}
-.ic{grid-row:1/span 3;width:52px;height:52px;border-radius:12px;background:var(--c);color:#1B1B19;display:grid;place-items:center}
-.ic svg{width:30px;height:30px}
+.head{display:flex;align-items:center;gap:12px;padding-right:44px}
+.ic{flex:none;width:44px;height:44px;border-radius:11px;background:var(--c);color:#1B1B19;display:grid;place-items:center}
+.ic svg{width:26px;height:26px}
 .tool h3{margin:0;font-size:1.12rem;line-height:1.25}
 .tool p{margin:0;font-family:var(--f-text);font-size:.97rem;color:var(--muted)}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.foot{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-top:auto;padding-top:6px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
 .tags span{font-family:var(--f-mono);font-size:.75rem;border:1px solid var(--line);border-radius:6px;padding:1px 7px;color:var(--muted)}
-.go{margin-top:10px;font-weight:700;font-size:.92rem}
+.go{flex:none;font-weight:700;font-size:.92rem}
 .go::after{content:" →"}
-.src{position:absolute;right:14px;top:14px;font-family:var(--f-mono);font-size:.72rem;color:var(--muted);text-decoration:none;z-index:2}
+.shot{display:block;margin:-16px -16px 6px;aspect-ratio:8/5;overflow:hidden;border-radius:12.5px 12.5px 0 0;border-bottom:4px solid var(--c);background:var(--line)}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block;transition:transform .3s}
+.tool:hover .shot img{transform:scale(1.03)}
+.tool:has(.shot) .head{padding-right:0}
+.src{position:absolute;right:12px;top:12px;background:var(--surface);padding:2px 8px;border-radius:99px;font-family:var(--f-mono);font-size:.72rem;color:var(--muted);text-decoration:none;z-index:2}
 .src:hover{text-decoration:underline}
 .stretch{position:absolute;inset:0;border-radius:14px;z-index:1}
 #noves[hidden]{display:none}
@@ -108,7 +114,8 @@ const HIDE=['rockin-cat.github.io','rockin','tallerdecreacio'];
 const ORG='rockin-cat';
 const url=r=>`https://${ORG}.github.io/${r}/`;
 const esc=s=>String(s).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[ch]);
-function card(t){return `<article class="tool" style="--c:var(${t.c})"><span class="ic">${ICON[t.i]||ICON.tool}</span><h3>${esc(t.nom)}</h3><p>${esc(t.d)}</p>${t.tags&&t.tags.length?`<div class="tags">${t.tags.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}<span class="go">Obre</span><a class="stretch" href="${url(t.repo)}" aria-label="Obre ${esc(t.nom)}"></a><a class="src" href="https://github.com/${ORG}/${t.repo}">codi</a></article>`}
+const SHOT=['Llenguatge-musical','guitarra-baix','teclat','bateria','mirall-de-veu','Cartes-rockin','Generador-diagrames','escolta-i-compon'];
+function card(t){const sh=SHOT.includes(t.repo);return `<article class="tool" style="--c:var(${t.c})">${sh?`<span class="shot"><img src="captures/${t.repo}.jpg" alt="Captura de ${esc(t.nom)}" loading="lazy" width="800" height="500"></span>`:''}<div class="head"><span class="ic">${ICON[t.i]||ICON.tool}</span><h3>${esc(t.nom)}</h3></div><p>${esc(t.d)}</p><div class="foot">${t.tags&&t.tags.length?`<div class="tags">${t.tags.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:'<span></span>'}<span class="go">Obre</span></div><a class="stretch" href="${url(t.repo)}" aria-label="Obre ${esc(t.nom)}"></a><a class="src" href="https://github.com/${ORG}/${t.repo}">codi</a></article>`}
 document.getElementById('g-tocar').innerHTML=TOOLS.filter(t=>t.g==='tocar').map(card).join('');
 document.getElementById('g-crear').innerHTML=TOOLS.filter(t=>t.g==='crear').map(card).join('');
 /* Eines noves: repositoris amb web publicada que encara no són a la llista */
