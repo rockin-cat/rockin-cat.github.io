@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Eines digitals Rockin</title>
-<meta name="description" content="Totes les eines digitals de Rockin per aprendre música i preparar les classes: guitarra, baix, bateria, teclat, veu, llenguatge musical, cartes i diagrames.">
+<meta name="description" content="Totes les eines digitals de Rockin per aprendre música i preparar les classes: guitarra, baix, bateria, teclat, veu, sampler, cartes i diagrames.">
 <link rel="icon" type="image/png" href="marca/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,17 +100,17 @@ const ICON={
 };
 /* Eines conegudes: repositori de rockin-cat, nom, descripció, etiquetes, color i icona */
 const TOOLS=[
-  {repo:'Llenguatge-musical',g:'tocar',nom:'Llenguatge musical',c:'--c-lang',i:'lang',tags:['Guitarra','Baix','Teclat','Bateria','Dictat'],d:'Cada tema comença amb una base que sona: veus al pal o al teclat com es toca, descobreixes els ingredients pas a pas i la toques amb la banda. També dictat rítmic amb les cartes.'},
   {repo:'guitarra-baix',g:'tocar',nom:'Guitarra i baix',c:'--c-gtr',i:'gtr',tags:['Guitarra','Baix','10 nivells'],d:'Tutor d\'estudi amb els fulls de ruta i les cartes Rockin: escoltes la teva part, la banda continua sense tu i l\'animació et guia.'},
   {repo:'teclat',g:'tocar',nom:'Entrenador d\'acompanyament',c:'--c-keys',i:'keys',tags:['Teclat','MIDI','Cartes'],d:'Toques els acords d\'una progressió amb el patró de la carta Rockin mentre sona la base, i cada nota es corregeix al moment.'},
   {repo:'bateria',g:'tocar',nom:'Bateria',c:'--c-drum',i:'drum',tags:['Bateria','MIDI','Cartes'],d:'Aprens a tocar la bateria amb les cartes de patrons Rockin: primer escoltes, després toques amb la banda i veus a cada cop com ha anat.'},
+  {repo:'rockin-sampler',g:'tocar',nom:'Rockin Sampler',c:'--c-keys',i:'keys',tags:['Launchkey','MIDI','Gravació'],d:'El Launchkey com un instrument més de la banda: pads amb sons i gravacions pròpies, seqüenciador en bucle, sons de teclat i efectes en directe.'},
   {repo:'mirall-de-veu',g:'tocar',nom:'Mirall de veu',c:'--c-voice',i:'voice',tags:['Veu','Cant'],d:'Carregues una cançó, se separa la veu de la banda i la treballes frase a frase: l\'escoltes, la cantes sobre la base i veus quines notes has encertat.'},
   {repo:'Cartes-rockin',g:'crear',nom:'Cartes Rockin',c:'--c-tools',i:'cards',tags:['Cartes','Creació'],d:'Les cartes Rockin en digital, per triar-les, combinar-les i crear estructures de cançó a la classe.'},
   {repo:'Generador-diagrames',g:'crear',nom:'Generador de diagrames',c:'--c-tools',i:'diag',tags:['Guitarra','Teclat','Baix','Bateria'],d:'Diagrames d\'acords i de bateria i estructura de cançons, amb una biblioteca compartida per al professorat.'},
   {repo:'escolta-i-compon',g:'crear',nom:'Escolta i compon',c:'--c-tools',i:'ear',tags:['Escolta','Vocabulari'],d:'Relacionar fragments de cançons amb descripcions i treballar el vocabulari musical. Té una vista per al professorat.'}
 ];
 /* Repositoris que no han de sortir a la portada (duplicats o aquesta mateixa pàgina) */
-const HIDE=['rockin-cat.github.io','rockin','tallerdecreacio'];
+const HIDE=['rockin-cat.github.io','rockin','tallerdecreacio','Llenguatge-musical'];
 const ORG='rockin-cat';
 const url=r=>`https://${ORG}.github.io/${r}/`;
 const esc=s=>String(s).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[ch]);
