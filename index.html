@@ -39,7 +39,7 @@ h2{margin:0 0 4px;font-size:1.35rem;letter-spacing:-.01em}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
 .tool{position:relative;display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:16px;text-decoration:none;transition:border-color .15s,transform .15s;min-width:0}
 .tool:hover{border-color:var(--ink);transform:translateY(-2px)}
-.head{display:flex;align-items:center;gap:12px;padding-right:44px}
+.head{display:flex;align-items:center;gap:12px}
 .ic{flex:none;width:44px;height:44px;border-radius:11px;background:var(--c);color:#1B1B19;display:grid;place-items:center}
 .ic svg{width:26px;height:26px}
 .tool h3{margin:0;font-size:1.12rem;line-height:1.25}
@@ -53,8 +53,6 @@ h2{margin:0 0 4px;font-size:1.35rem;letter-spacing:-.01em}
 .shot img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block;transition:transform .3s}
 .tool:hover .shot img{transform:scale(1.03)}
 .tool:has(.shot) .head{padding-right:0}
-.src{position:absolute;right:12px;top:12px;background:var(--surface);padding:2px 8px;border-radius:99px;font-family:var(--f-mono);font-size:.72rem;color:var(--muted);text-decoration:none;z-index:2}
-.src:hover{text-decoration:underline}
 .stretch{position:absolute;inset:0;border-radius:14px;z-index:1}
 #noves[hidden]{display:none}
 footer{max-width:1040px;margin:0 auto;padding:0 16px 32px;color:var(--muted);font-size:.85rem;display:grid;gap:4px}
@@ -85,7 +83,7 @@ footer{max-width:1040px;margin:0 auto;padding:0 16px 32px;color:var(--muted);fon
     <div class="grid" id="g-noves"></div>
   </section>
 </main>
-<footer><span>Rockin.cat SCCL · Materials sota llicència Creative Commons BY-NC-SA 4.0.</span><span>Codi obert a <a href="https://github.com/rockin-cat">github.com/rockin-cat</a>.</span></footer>
+<footer><span>Rockin.cat SCCL · Materials sota llicència Creative Commons BY-NC-SA 4.0.</span></footer>
 <script>
 const ICON={
   gtr:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M28 36 52 12"/><path d="m48 8 8 8"/><path d="M27 25c-5-3-12-1-14 4-3 1-6 4-6 9 0 9 9 18 18 18 5 0 8-3 9-6 5-2 7-9 4-14-2-4-6-5-8-4"/><circle cx="23" cy="41" r="3.5"/></svg>',
@@ -115,7 +113,7 @@ const ORG='rockin-cat';
 const url=r=>`https://${ORG}.github.io/${r}/`;
 const esc=s=>String(s).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[ch]);
 const SHOT=['Llenguatge-musical','guitarra-baix','teclat','bateria','rockin-sampler','mirall-de-veu','Cartes-rockin','Generador-diagrames','escolta-i-compon'];
-function card(t){const sh=t.shot||(SHOT.includes(t.repo)?t.repo:'');return `<article class="tool" style="--c:var(${t.c})">${sh?`<span class="shot"><img src="captures/${sh}.jpg" alt="Captura de ${esc(t.nom)}" loading="lazy" width="800" height="500"></span>`:''}<div class="head"><span class="ic">${ICON[t.i]||ICON.tool}</span><h3>${esc(t.nom)}</h3></div><p>${esc(t.d)}</p><div class="foot">${t.tags&&t.tags.length?`<div class="tags">${t.tags.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:'<span></span>'}<span class="go">Obre</span></div><a class="stretch" href="${url(t.repo)}" aria-label="Obre ${esc(t.nom)}"></a><a class="src" href="https://github.com/${ORG}/${t.repo}">codi</a></article>`}
+function card(t){const sh=t.shot||(SHOT.includes(t.repo)?t.repo:'');return `<article class="tool" style="--c:var(${t.c})">${sh?`<span class="shot"><img src="captures/${sh}.jpg" alt="Captura de ${esc(t.nom)}" loading="lazy" width="800" height="500"></span>`:''}<div class="head"><span class="ic">${ICON[t.i]||ICON.tool}</span><h3>${esc(t.nom)}</h3></div><p>${esc(t.d)}</p><div class="foot">${t.tags&&t.tags.length?`<div class="tags">${t.tags.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:'<span></span>'}<span class="go">Obre</span></div><a class="stretch" href="${url(t.repo)}" aria-label="Obre ${esc(t.nom)}"></a></article>`}
 document.getElementById('g-tocar').innerHTML=TOOLS.filter(t=>t.g==='tocar').map(card).join('');
 document.getElementById('g-crear').innerHTML=TOOLS.filter(t=>t.g==='crear').map(card).join('');
 /* Eines noves: repositoris amb web publicada que encara no són a la llista */
