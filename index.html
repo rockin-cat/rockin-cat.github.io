@@ -40,8 +40,6 @@ h2{margin:0 0 4px;font-size:1.35rem;letter-spacing:-.01em}
 .pgrid article{background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:16px 18px;min-width:0}
 .pgrid h3{margin:0 0 6px;font-size:1.02rem;line-height:1.3}
 .pgrid p{margin:0;font-family:var(--f-text);font-size:.95rem;color:var(--muted)}
-.pfaq{margin:14px 0 0;font-family:var(--f-text);font-size:.97rem;color:var(--muted);max-width:70ch}
-.pfaq b{color:var(--ink)}
 .sec-sub{margin:0 0 16px;font-family:var(--f-text);color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
 .tool{position:relative;display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:16px;text-decoration:none;transition:border-color .15s,transform .15s;min-width:0}
@@ -61,6 +59,12 @@ h2{margin:0 0 4px;font-size:1.35rem;letter-spacing:-.01em}
 .tool:hover .shot img{transform:scale(1.03)}
 .tool:has(.shot) .head{padding-right:0}
 .stretch{position:absolute;inset:0;border-radius:14px;z-index:1}
+.hero-link{display:inline-flex;justify-self:start;align-self:start;width:fit-content;align-items:center;gap:6px;margin-top:18px;padding:9px 16px;border:1.5px solid var(--ink);border-radius:99px;color:var(--ink);text-decoration:none;font-weight:700;font-size:.95rem}
+.hero-link:hover{background:var(--ink);color:var(--surface)}
+.hero-link::after{content:"→"}
+.bar-in a.home{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}
+.back{display:inline-block;margin:0 0 18px;color:var(--muted);text-decoration:none;font-size:.92rem}
+.back:hover{color:var(--ink)}
 #noves[hidden]{display:none}
 footer{max-width:1040px;margin:0 auto;padding:0 16px 32px;color:var(--muted);font-size:.85rem;display:grid;gap:4px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -73,13 +77,8 @@ footer{max-width:1040px;margin:0 auto;padding:0 16px 32px;color:var(--muted);fon
     <span class="kicker">ROCKIN · [R]EVOLUCIONEM LA MÚSICA</span>
     <h1>Eines digitals per aprendre música tocant en grup</h1>
     <p class="lead">Bastides de suport a l'aprenentatge que complementen les cartes i els materials de Rockin. Funcionen amb el navegador, sense instal·lar res, i el que es practica aquí es porta després a l'instrument i a la banda.</p>
+    <a class="hero-link" href="com-les-entenem.html">Com entenem aquestes eines</a>
   </div>
-  <section class="principis" id="com">
-    <h2>Com entenem aquestes eines</h2>
-    <p class="sec-sub">A Rockin, la música s'aprèn tocant en grup. Aquestes eines no substitueixen aquest camí: el preparen.</p>
-    <div class="pgrid"><article><h3>S'aprèn el patró, no la cançó.</h3><p>Una carta Rockin no és una cançó concreta: és un ritme, un acord o una línia que apareix en centenars de cançons. Qui domina un patró pot acompanyar aquella cançó i moltes més. Per això les cartes porten cançons de referència («sona així a…»): la cançó és l'exemple, no l'objectiu. Practicar patrons ensenya a reconèixer i a transferir, que és el que fa un músic en un grup quan escolta una cançó nova i sap què hi va.</p></article><article><h3>Estan fetes per acabar-se.</h3><p>La majoria d'aplicacions musicals estan pensades perquè no les deixis mai. Aquestes, al revés: no hi ha estrelles, rècords ni rangs. Cada vegada que toques, l'eina et diu on ets (en procés, a prop o «ja ho tens!»), què t'ha faltat i què pots fer, i si cal et proposa tornar a un pas anterior o passar al següent. El camí té un final clar: «ja pots portar-ho al teu grup». Una eina ha fet bé la feina quan ja no la necessites.</p></article><article><h3>La música la fas tu.</h3><p>Les eines no componen ni toquen per tu. Et donen el context perquè decideixis, provis i t'equivoquis.</p></article><article><h3>El que la pantalla no pot ensenyar passa al grup.</h3><p>Escoltar els altres, adaptar-te a un baixista que corre, decidir un break perquè la cançó el demana, començar comptant, equivocar-te i continuar. Les eines treballen el que es pot automatitzar sense ningú al davant —la coordinació, la lectura de les cartes, el pols estable— perquè el temps amb el grup es dediqui a fer música. Són una bastida: es construeixen per treure-les.</p></article><article><h3>El repertori el posa el grup.</h3><p>Les eines no tenen un catàleg de cançons propi. Poden carregar les cançons que el professorat comparteix a la biblioteca del Generador de diagrames, amb l'estructura, els acords i el patró que el grup ha triat. No imposen cançons: practiquen les del grup.</p></article><article><h3>Obertes i sense data de caducitat.</h3><p>Com que no depenen de cançons comercials, els materials poden ser oberts (CC BY-NC-SA) i no passen de moda: un patró de rock servirà igual d'aquí a deu anys.</p></article></div>
-    <p class="pfaq"><b>I les cançons que agraden a l'alumnat?</b> Motiven, i molt. Per això aquesta motivació és on té més sentit: al grup, tocant la cançó que han triat amb els companys i companyes. Les eines els hi porten.</p>
-  </section>
   <section>
     <h2>Aprendre a tocar</h2>
     <p class="sec-sub">Per a l'alumnat: practicar cada instrument amb una banda que acompanya.</p>
