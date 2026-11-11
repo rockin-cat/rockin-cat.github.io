@@ -17,8 +17,6 @@
   --c-gtr:#E8A800; --c-bass:#1FA597; --c-drum:#E2476F; --c-keys:#2E95D3; --c-lang:#8A63D2; --c-voice:#E07A2E; --c-tools:#4F5B66;
   --f-ui:'Ubuntu','Trebuchet MS',system-ui,sans-serif; --f-text:'Lora',Georgia,serif; --f-mono:'Ubuntu Mono',ui-monospace,Menlo,monospace;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#131312;--surface:#1C1C1A;--ink:#ECEBE6;--muted:#A2A098;--line:#33322E;color-scheme:dark}}
-:root[data-theme="dark"]{--paper:#131312;--surface:#1C1C1A;--ink:#ECEBE6;--muted:#A2A098;--line:#33322E;color-scheme:dark}
 *{box-sizing:border-box}
 html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-ui);font-size:16px;line-height:1.5}
@@ -80,14 +78,19 @@ footer{max-width:1040px;margin:0 auto;padding:0 16px 32px;color:var(--muted);fon
     <a class="hero-link" href="com-les-entenem.html">Com entenem aquestes eines</a>
   </div>
   <section>
-    <h2>Aprendre a tocar</h2>
+    <h2>Per aprendre un instrument</h2>
     <p class="sec-sub">Per a l'alumnat: practicar cada instrument amb una banda que acompanya.</p>
     <div class="grid" id="g-tocar"></div>
   </section>
   <section>
-    <h2>Preparar, crear i escoltar</h2>
-    <p class="sec-sub">Per preparar les classes, crear cançons i treballar l'escolta.</p>
+    <h2>Per compondre</h2>
+    <p class="sec-sub">Per a les bandes: escoltar com estan fetes les cançons i crear-ne de pròpies.</p>
     <div class="grid" id="g-crear"></div>
+  </section>
+  <section>
+    <h2>Per preparar les classes</h2>
+    <p class="sec-sub">Per al professorat: fabricar el material de cada cançó.</p>
+    <div class="grid" id="g-prof"></div>
   </section>
   <section id="noves" hidden>
     <h2>Noves eines</h2>
@@ -115,8 +118,9 @@ const TOOLS=[
   {repo:'bateria',g:'tocar',nom:'Bateria',c:'--c-drum',i:'drum',tags:['Bateria','MIDI','Cartes'],d:'Aprens a tocar la bateria amb les cartes de patrons Rockin: primer escoltes, després toques amb la banda i veus a cada cop com ha anat.'},
   {repo:'rockin-sampler',g:'tocar',nom:'Rockin Sampler',c:'--c-keys',i:'keys',tags:['Launchkey','MIDI','Gravació'],d:'El Launchkey com un instrument més de la banda: pads amb sons i gravacions pròpies, seqüenciador en bucle, sons de teclat i efectes en directe.'},
   {repo:'mirall-de-veu',g:'tocar',nom:'Mirall de veu',c:'--c-voice',i:'voice',tags:['Veu','Cant'],d:'Carregues una cançó, se separa la veu de la banda i la treballes frase a frase: l\'escoltes, la cantes sobre la base i veus quines notes has encertat.'},
-  {repo:'tallerdecreacio',shot:'Cartes-rockin',g:'crear',nom:'Cartes Rockin',c:'--c-tools',i:'cards',tags:['Cartes','Creació'],d:'Les cartes Rockin en digital, per triar-les, combinar-les i crear estructures de cançó a la classe.'},
-  {repo:'Generador-diagrames',g:'crear',nom:'Generador de diagrames',c:'--c-tools',i:'diag',tags:['Guitarra','Teclat','Baix','Bateria'],d:'Diagrames d\'acords i de bateria i estructura de cançons, amb una biblioteca compartida per al professorat.'},
+  {repo:'tallerdecreacio',shot:'Cartes-rockin',g:'crear',nom:'Taller de creació',c:'--c-tools',i:'cards',tags:['Cartes','Estructura','Arranjament'],d:'Les cartes Rockin en digital: triar-les, combinar-les i muntar l\'estructura i l\'arranjament de la cançó de la banda.'},
+  {repo:'recursos-per-compondre',g:'crear',nom:'Recursos per compondre',c:'--c-tools',i:'lang',tags:['Temàtica','Lletra','Estructura'],d:'Idees, cançons i exemples per fer la vostra música: de què parlar, com fer la base, com escriure la lletra, com començar i com acabar.'},
+  {repo:'Generador-diagrames',g:'prof',nom:'Generador de diagrames',c:'--c-tools',i:'diag',tags:['Guitarra','Teclat','Baix','Bateria'],d:'Diagrames d\'acords i de bateria i estructura de cançons, amb una biblioteca compartida per al professorat.'},
   {repo:'escolta-i-compon',g:'crear',nom:'Escolta i compon',c:'--c-tools',i:'ear',tags:['Escolta','Vocabulari'],d:'Relacionar fragments de cançons amb descripcions i treballar el vocabulari musical. Té una vista per al professorat.'}
 ];
 /* Repositoris que no han de sortir a la portada (duplicats o aquesta mateixa pàgina) */
@@ -128,6 +132,7 @@ const SHOT=['Llenguatge-musical','guitarra-baix','teclat','bateria','rockin-samp
 function card(t){const sh=t.shot||(SHOT.includes(t.repo)?t.repo:'');return `<article class="tool" style="--c:var(${t.c})">${sh?`<span class="shot"><img src="captures/${sh}.jpg" alt="Captura de ${esc(t.nom)}" loading="lazy" width="800" height="500"></span>`:''}<div class="head"><span class="ic">${ICON[t.i]||ICON.tool}</span><h3>${esc(t.nom)}</h3></div><p>${esc(t.d)}</p><div class="foot">${t.tags&&t.tags.length?`<div class="tags">${t.tags.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:'<span></span>'}<span class="go">Obre</span></div><a class="stretch" href="${url(t.repo)}" aria-label="Obre ${esc(t.nom)}"></a></article>`}
 document.getElementById('g-tocar').innerHTML=TOOLS.filter(t=>t.g==='tocar').map(card).join('');
 document.getElementById('g-crear').innerHTML=TOOLS.filter(t=>t.g==='crear').map(card).join('');
+document.getElementById('g-prof').innerHTML=TOOLS.filter(t=>t.g==='prof').map(card).join('');
 /* Eines noves: repositoris amb web publicada que encara no són a la llista */
 (async()=>{
   try{
