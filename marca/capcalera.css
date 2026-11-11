@@ -1,0 +1,64 @@
+/* Capçalera comuna de les eines Rockin
+   Font única: https://rockin-cat.github.io/marca/capcalera.css
+   Ús (cada eina):
+     <link rel="stylesheet" href="/marca/capcalera.css">
+     <header class="rk-cap">
+       <div class="rk-marca">
+         <a class="rk-totes" href="/" title="Totes les eines Rockin"><img class="rk-logo" src="/marca/rockin-logo-fosc.png" alt="Rockin" width="382" height="72"></a>
+         <span class="rk-sep" aria-hidden="true"></span>
+         <a class="rk-eina" href="#">Nom de l'eina</a>
+       </div>
+       … controls de l'eina …
+     </header>
+   Classes opcionals a la capçalera:
+     rk-alta          la barra deixa anar els controls a una segona fila (eines amb molts controls)
+     rk-amb-controls  al mòbil s'amaga el nom de l'eina per deixar lloc als controls
+   Canviar mides o colors aquí canvia totes les eines alhora. */
+
+:root { --rk-groc: #FDBE10; --rk-tinta: #1f1e1c; --rk-alt: 56px; }
+
+.rk-cap {
+  background: var(--rk-groc) !important;
+  color: var(--rk-tinta) !important;
+  height: auto !important;
+  min-height: var(--rk-alt) !important;
+  padding-top: 0 !important; padding-bottom: 0 !important;
+  padding-left: 20px !important; padding-right: 16px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .12) !important;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+  font-family: Ubuntu, 'Helvetica Neue', Arial, sans-serif;
+}
+.rk-cap.rk-alta { padding-top: 6px !important; padding-bottom: 6px !important; flex-wrap: wrap; }
+
+.rk-marca { display: flex; align-items: center; gap: 12px; flex: 0 1 auto; min-width: 0; margin-right: auto; height: var(--rk-alt); }
+.rk-cap.rk-alta .rk-marca { height: 44px; }
+.rk-totes { display: block; flex: none; line-height: 0; border-radius: 4px; }
+.rk-logo { display: block; height: 24px; width: auto; }
+.rk-sep { flex: none; width: 1px; height: 22px; background: var(--rk-tinta); opacity: .3; }
+.rk-eina {
+  font: 500 17px/1.2 Ubuntu, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--rk-tinta) !important;
+  text-decoration: none; text-transform: none; letter-spacing: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0;
+  background: none; border: 0; padding: 0; margin: 0; cursor: pointer;
+}
+span.rk-eina { cursor: default; }
+a.rk-eina:hover, button.rk-eina:hover { text-decoration: underline; text-underline-offset: 3px; }
+.rk-totes:focus-visible, .rk-eina:focus-visible { outline: 2px solid var(--rk-tinta); outline-offset: 3px; }
+
+@media (max-width: 600px) {
+  :root { --rk-alt: 52px; }
+  .rk-cap { padding-left: 14px !important; padding-right: 10px !important; gap: 4px 8px; flex-wrap: wrap; }
+  .rk-marca { gap: 9px; }
+  .rk-logo { height: 19px; }
+  .rk-sep { height: 18px; }
+  .rk-eina { font-size: 15px; }
+  .rk-cap.rk-amb-controls .rk-sep, .rk-cap.rk-amb-controls .rk-eina { display: none; }
+}
+
+@media print { .rk-cap { box-shadow: none !important; } }
