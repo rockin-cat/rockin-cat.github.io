@@ -8,77 +8,51 @@
 <link rel="icon" type="image/png" href="marca/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Ubuntu:wght@400;500;700&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/marca/capcalera.css">
 <style>
-/* Portada: barra groga Rockin, presentació breu i eines agrupades per ús (aprendre a tocar / preparar i crear) */
-:root{
-  --paper:#F2F2EF; --surface:#FFFFFF; --ink:#1B1B19; --muted:#63625C; --line:#DAD9D3;
-  --yellow:#FFC012; --on-yellow:#1B1B19;
-  --c-gtr:#E8A800; --c-bass:#1FA597; --c-drum:#E2476F; --c-keys:#2E95D3; --c-lang:#8A63D2; --c-voice:#E07A2E; --c-tools:#4F5B66;
-  --f-ui:'Ubuntu','Trebuchet MS',system-ui,sans-serif; --f-text:'Lora',Georgia,serif; --f-mono:'Ubuntu Mono',ui-monospace,Menlo,monospace;
-}
+/* Com entenem aquestes eines: la marca Rockin en groc i negre, com la portada */
+:root{--groc:#FDBE10;--tinta:#222;--paper:#F4F2EE;--blanc:#fff;--gris:#55524C}
 *{box-sizing:border-box}
-html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-ui);font-size:16px;line-height:1.5}
+body{margin:0;background:var(--paper);color:var(--tinta);font-family:"Open Sans",system-ui,sans-serif;font-size:16px;line-height:1.6}
 a{color:inherit}
-:focus-visible{outline:3px solid #2B57D1;outline-offset:2px}
-.bar{background:var(--yellow);color:var(--on-yellow)}
-.bar-in{max-width:1040px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px}
-.logo{height:1.6rem;width:auto;display:block;filter:brightness(0)}
-.bar .sub{font-family:var(--f-text);font-style:italic}
-main{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:36px 64px}
-.hero{display:grid;gap:10px;margin-bottom:40px;max-width:62ch}
-.kicker{font-family:var(--f-mono);font-size:.82rem;color:var(--muted);letter-spacing:.05em}
-h1{margin:0;font-size:clamp(2rem,5.4vw,3.2rem);line-height:1.05;letter-spacing:-.025em;text-wrap:balance}
-.lead{margin:0;font-family:var(--f-text);font-size:1.12rem;color:var(--muted)}
-section{margin-bottom:40px}
-h2{margin:0 0 4px;font-size:1.35rem;letter-spacing:-.01em}
-.principis{margin-bottom:44px}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-top:4px}
-.pgrid article{background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:16px 18px;min-width:0}
-.pgrid h3{margin:0 0 6px;font-size:1.02rem;line-height:1.3}
-.pgrid p{margin:0;font-family:var(--f-text);font-size:.95rem;color:var(--muted)}
-.sec-sub{margin:0 0 16px;font-family:var(--f-text);color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
-.tool{position:relative;display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:16px;text-decoration:none;transition:border-color .15s,transform .15s;min-width:0}
-.tool:hover{border-color:var(--ink);transform:translateY(-2px)}
-.head{display:flex;align-items:center;gap:12px}
-.ic{flex:none;width:44px;height:44px;border-radius:11px;background:var(--c);color:#1B1B19;display:grid;place-items:center}
-.ic svg{width:26px;height:26px}
-.tool h3{margin:0;font-size:1.12rem;line-height:1.25}
-.tool p{margin:0;font-family:var(--f-text);font-size:.97rem;color:var(--muted)}
-.foot{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-top:auto;padding-top:6px}
-.tags{display:flex;flex-wrap:wrap;gap:6px}
-.tags span{font-family:var(--f-mono);font-size:.75rem;border:1px solid var(--line);border-radius:6px;padding:1px 7px;color:var(--muted)}
-.go{flex:none;font-weight:700;font-size:.92rem}
-.go::after{content:" →"}
-.shot{display:block;margin:-16px -16px 6px;aspect-ratio:8/5;overflow:hidden;border-radius:12.5px 12.5px 0 0;border-bottom:4px solid var(--c);background:var(--line)}
-.shot img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block;transition:transform .3s}
-.tool:hover .shot img{transform:scale(1.03)}
-.tool:has(.shot) .head{padding-right:0}
-.stretch{position:absolute;inset:0;border-radius:14px;z-index:1}
-.hero-link{display:inline-flex;justify-self:start;align-self:start;width:fit-content;align-items:center;gap:6px;margin-top:18px;padding:9px 16px;border:1.5px solid var(--ink);border-radius:99px;color:var(--ink);text-decoration:none;font-weight:700;font-size:.95rem}
-.hero-link:hover{background:var(--ink);color:var(--surface)}
-.hero-link::after{content:"→"}
-.bar-in a.home{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}
-.back{display:inline-block;margin:0 0 18px;color:var(--muted);text-decoration:none;font-size:.92rem}
-.back:hover{color:var(--ink)}
-#noves[hidden]{display:none}
-footer{max-width:1040px;margin:0 auto;padding:0 16px 32px;color:var(--muted);font-size:.85rem;display:grid;gap:4px}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+:focus-visible{outline:3px solid var(--tinta);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+.groc{background:var(--groc)}
+.groc .rk-cap{max-width:1120px;margin:0 auto}
+.cap-intro{padding-top:34px;padding-bottom:52px}
+.cap-intro h1{max-width:16ch}
+.back{display:inline-block;margin:0 0 18px;font-weight:800;text-decoration:none;font-size:15px}
+.back:hover{text-decoration:underline}
+h1{margin:0 0 14px;font-weight:800;font-size:clamp(38px,5.6vw,72px);line-height:.98;letter-spacing:-.035em}
+.sec-sub{margin:0;font-weight:600;font-size:clamp(17px,1.6vw,20px);max-width:52ch}
+main{padding:52px 0 70px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
+.pgrid article{background:var(--blanc);border:2px solid var(--tinta);border-radius:18px;padding:22px 24px;box-shadow:5px 5px 0 var(--tinta);min-width:0}
+.pgrid h3{margin:0 0 10px;font-weight:800;font-size:22px;line-height:1.2;letter-spacing:-.01em}
+.pgrid p{margin:0 0 10px;color:var(--gris);font-size:15.5px}
+.pgrid p:last-child{margin-bottom:0}
+footer{background:var(--groc)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding-block:26px;font-weight:600;font-size:14.5px}
+footer a{font-weight:800}
 </style>
 </head>
 <body>
-<header class="bar"><div class="bar-in"><a class="home" href="./"><img class="logo" src="marca/rockin-wordmark.png" alt="ROCKIN" width="720" height="141"><span class="sub">Eines digitals</span></a></div></header>
-<main>
-  <a class="back" href="./">← Totes les eines</a>
+<div class="groc">
+  <header class="rk-cap">
+    <div class="rk-marca">
+      <a class="rk-totes" href="/" title="Totes les eines Rockin"><img class="rk-logo" src="/marca/rockin-logo-fosc.png" alt="Rockin" width="382" height="72"></a>
+      <span class="rk-sep" aria-hidden="true"></span>
+      <a class="rk-eina" href="./">Eines digitals</a>
+    </div>
+  </header>
+  <div class="wrap cap-intro"><a class="back" href="./">← Totes les eines</a><h1>Com entenem aquestes eines</h1><p class="sec-sub">A Rockin, la música s'aprèn tocant en grup. Aquestes eines no substitueixen aquest camí: el preparen.</p></div>
+</div>
+<main><div class="wrap">
   <section class="principis" id="com">
-    <h1 style="margin:0 0 8px">Com entenem aquestes eines</h1>
-    <p class="sec-sub">A Rockin, la música s'aprèn tocant en grup. Aquestes eines no substitueixen aquest camí: el preparen.</p>
     <div class="pgrid"><article><h3>S'aprèn el patró, no la cançó.</h3><p>Una carta Rockin no és una cançó concreta: és un ritme, un acord o una línia que apareix en centenars de cançons. Qui domina un patró pot acompanyar aquella cançó i moltes més. Per això les cartes porten cançons de referència («sona així a…»): la cançó és l'exemple, no l'objectiu. Practicar patrons ensenya a reconèixer i a transferir, que és el que fa un músic en un grup quan escolta una cançó nova i sap què hi va.</p><p>Això no vol dir que no toquem cançons. Toquem cançons d'exemple, i cadascuna es pot tocar de mil maneres: amb una carta o amb una altra, més senzilla o més elaborada. Cada alumne tria com la vol tocar, i així aprèn a escollir.</p></article><article><h3>Estan fetes per acabar-se.</h3><p>La majoria d'aplicacions musicals estan pensades perquè no les deixis mai. Aquestes, al revés: no hi ha estrelles, rècords ni rangs. Cada vegada que toques, l'eina et diu on ets (en procés, a prop o «ja ho tens!»), i què t'ha faltat. Després et pregunta què creus que necessites —baixar el tempo, treure l'ajuda, tornar a un pas anterior, passar al següent— i ets tu qui decideix com practicar. A «Què sé fer» veus quines decisions t'han funcionat: aprendre a triar el camí també forma part d'aprendre. El camí té un final clar: «ja pots portar-ho al teu grup». Una eina ha fet bé la feina quan ja no la necessites.</p></article><article><h3>La música la fas tu.</h3><p>Les eines no componen ni toquen per tu. Et donen el context perquè decideixis, provis i t'equivoquis.</p></article><article><h3>El que la pantalla no pot ensenyar passa al grup.</h3><p>Escoltar els altres, adaptar-te a un baixista que corre, decidir un break perquè la cançó el demana, començar comptant, equivocar-te i continuar. Les eines treballen el que es pot automatitzar sense ningú al davant —la coordinació, la lectura de les cartes, el pols estable— perquè el temps amb el grup es dediqui a fer música. Són una bastida: es construeixen per treure-les.</p></article><article><h3>El repertori el posa el grup.</h3><p>Les eines no tenen un catàleg de cançons propi. Poden carregar les cançons que el professorat comparteix a la biblioteca del Generador de diagrames, amb l'estructura, els acords i el patró que el grup ha triat. També hi pots escriure l'esbós de la teva pròpia cançó —una progressió d'acords, l'estructura— i tocar-hi a sobre. No imposen cançons: practiquen les del grup, i les que el grup crea.</p></article></div>
   </section>
-  <a class="hero-link" href="./">Anar a les eines</a>
-</main>
-<footer><span>Rockin.cat SCCL · Materials sota llicència Creative Commons BY-NC-SA 4.0.</span></footer>
+</div></main>
+<footer><div class="wrap"><span>Rockin.cat SCCL · Materials sota llicència Creative Commons BY-NC-SA 4.0</span><a href="./">Anar a les eines →</a></div></footer>
 </body>
 </html>
