@@ -10,7 +10,7 @@
 
 const API = /^(localhost|127\.0\.0\.1)$/.test(location.hostname)
   ? 'http://127.0.0.1:8099/classe/api.php'           // proves locals
-  : 'https://rockin.logosit.net/classe/api.php';
+  : 'https://portal.rockin.cat/classe/api.php';
 const CLAU = 'rockin.classe.v1';
 // Mentre les classes siguin de prova, el botó només surt a qui arriba amb l'enllaç de la classe
 // (…/bateria/?classe=XXXX-XXXX) o ja s'hi ha connectat. Quan s'obri a tothom, posa-ho a true.
